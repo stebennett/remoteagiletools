@@ -1,0 +1,22 @@
+name: Prepare Release
+
+on: workflow_dispatch
+  inputs:
+    releaseVersion:
+      description: 'The release version'
+      required: true
+    nextVersion:
+      description: 'The next version'
+      required: true
+
+
+jobs:
+  # Trigger CircleCI to run a workflow to prepare release
+  trigger_circle_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Print variables
+        run: |
+          echo ${{ github.event.inputs.releaseVersion }} ${{ github.event.inputs.nextVersion }}
