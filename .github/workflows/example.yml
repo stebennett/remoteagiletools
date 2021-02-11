@@ -1,13 +1,14 @@
 name: Prepare Release
 
-on: workflow_dispatch
-  inputs:
-    releaseVersion:
-      description: 'The release version'
-      required: true
-    nextVersion:
-      description: 'The next version'
-      required: true
+on: 
+  workflow_dispatch:
+    inputs:
+      releaseVersion:
+        description: 'The release version'
+        required: true
+      nextVersion:
+        description: 'The next version'
+        required: true
 
 
 jobs:
